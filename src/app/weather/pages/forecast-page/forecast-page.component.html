@@ -1,74 +1,86 @@
 <div class="container">
-    <div class="wrapper">
-        <div class="left-side">
-            <app-location-search-autocomplete #searchComponent class="search-bar" (locationSelected)="goToSelectedLocation($event)" *ngIf="!isMobile"></app-location-search-autocomplete>
-            <div *ngIf="!isError">
-                <app-actual-weather *pw-skeleton="isLoading; height:'337px'; padding:'0 12px 0'; width: '100%';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
-                    [weatherCode]="forecastData$.hourly.weathercode[actualHourIndex]" [place]="placeName"
-                    [temperature]="forecastData$.hourly.temperature_2m[actualHourIndex]"
-                    [humidity]="forecastData$.hourly.relativehumidity_2m[actualHourIndex]"
-                    [precipitation]="forecastData$.hourly.precipitation[actualHourIndex]"
-                    [radiation]="forecastData$.hourly.shortwave_radiation[actualHourIndex]" [placeCode]="placeCode"
-                    [isDefaultLocation]="isDefaultLocation"
-                    [actualDay] = "actualDay">
-                </app-actual-weather>
-                <div class="forecast-info-grid">
-                    <ng-container *ngIf="isOneColumn">
-                        <app-next-hour-weather *pw-skeleton="isLoading; height:'159px'; padding:'12px'; width: '100%';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
-                            [actualHourIndex]="actualHourIndex" [temperatures]="forecastData$.hourly.temperature_2m"
-                            [weatherTimes]="forecastData$.hourly.time" [weatherCodes]="forecastData$.hourly.weathercode">
-                        </app-next-hour-weather>
-                        <app-weather-week-info *pw-skeleton="isLoading; height:'515px'; padding:'0 12px' width: '100%';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
-                            [weekDays]="forecastData$.daily.time"
-                            [weekMaxTemperature]="forecastData$.daily.temperature_2m_max"
-                            [weekWeatherCode]="forecastData$.daily.weathercode">
-                        </app-weather-week-info>
-                    </ng-container>
-                    <app-actual-weather-info *pw-skeleton="isLoading; height:'129px'; padding:'12px 12px 0'; width: '100%';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
-                        [weatherPressure]="forecastData$.hourly.surface_pressure[actualHourIndex]"
-                        [weatherDewpoint]="forecastData$.hourly.dewpoint_2m[actualHourIndex]">
-                    </app-actual-weather-info>
-                    <app-weather-sunset-info class="sunset-info" [ngClass]="{'forecastcard-prerender' : isPrerender}"
-                        *pw-skeleton="isLoading; height:'129px'; width: '100%'; padding: '12px 12px 0'"
-                        [sunsetTime]="forecastData$.daily.sunset[0]" [sunriseTime]="forecastData$.daily.sunrise[0]">
-                    </app-weather-sunset-info>
-                    <app-wind-info *pw-skeleton="isLoading; height:'129px'; width: '100%'; padding: '12px 12px 0';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
-                        [windDirectionAngle]="forecastData$.hourly.winddirection_10m[actualHourIndex]"
-                        [windSpeed]="forecastData$.hourly.windspeed_10m[actualHourIndex]">
-                    </app-wind-info>
-                </div>
-            </div>
+  <div class="wrapper">
+    <div class="left-side">
+      @if (!isMobile) {
+        <app-location-search-autocomplete #searchComponent class="search-bar" (locationSelected)="goToSelectedLocation($event)"></app-location-search-autocomplete>
+      }
+      @if (!isError) {
+        <div>
+          <app-actual-weather *pw-skeleton="isLoading; height:'337px'; padding:'0 12px 0'; width: '100%';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
+            [weatherCode]="forecastData$.hourly.weathercode[actualHourIndex]" [place]="placeName"
+            [temperature]="forecastData$.hourly.temperature_2m[actualHourIndex]"
+            [humidity]="forecastData$.hourly.relativehumidity_2m[actualHourIndex]"
+            [precipitation]="forecastData$.hourly.precipitation[actualHourIndex]"
+            [radiation]="forecastData$.hourly.shortwave_radiation[actualHourIndex]" [placeCode]="placeCode"
+            [isDefaultLocation]="isDefaultLocation"
+            [actualDay] = "actualDay">
+          </app-actual-weather>
+          <div class="forecast-info-grid">
+            @if (isOneColumn) {
+              <app-next-hour-weather *pw-skeleton="isLoading; height:'159px'; padding:'12px'; width: '100%';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
+                [actualHourIndex]="actualHourIndex" [temperatures]="forecastData$.hourly.temperature_2m"
+                [weatherTimes]="forecastData$.hourly.time" [weatherCodes]="forecastData$.hourly.weathercode">
+              </app-next-hour-weather>
+              <app-weather-week-info *pw-skeleton="isLoading; height:'515px'; padding:'0 12px' width: '100%';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
+                [weekDays]="forecastData$.daily.time"
+                [weekMaxTemperature]="forecastData$.daily.temperature_2m_max"
+                [weekWeatherCode]="forecastData$.daily.weathercode">
+              </app-weather-week-info>
+            }
+            <app-actual-weather-info *pw-skeleton="isLoading; height:'129px'; padding:'12px 12px 0'; width: '100%';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
+              [weatherPressure]="forecastData$.hourly.surface_pressure[actualHourIndex]"
+              [weatherDewpoint]="forecastData$.hourly.dewpoint_2m[actualHourIndex]">
+            </app-actual-weather-info>
+            <app-weather-sunset-info class="sunset-info" [ngClass]="{'forecastcard-prerender' : isPrerender}"
+              *pw-skeleton="isLoading; height:'129px'; width: '100%'; padding: '12px 12px 0'"
+              [sunsetTime]="forecastData$.daily.sunset[0]" [sunriseTime]="forecastData$.daily.sunrise[0]">
+            </app-weather-sunset-info>
+            <app-wind-info *pw-skeleton="isLoading; height:'129px'; width: '100%'; padding: '12px 12px 0';" [ngClass]="{'forecastcard-prerender' : isPrerender}"
+              [windDirectionAngle]="forecastData$.hourly.winddirection_10m[actualHourIndex]"
+              [windSpeed]="forecastData$.hourly.windspeed_10m[actualHourIndex]">
+            </app-wind-info>
+          </div>
         </div>
-        <div class="right-side" *ngIf="!isOneColumn">
-            <div class="actual-day">
-              <!--  <p>{{actualDay.weekDay}}</p> -->
-               <!-- <p>{{actualDay.date}}</p> -->
-            </div>
-            <ng-container *ngIf="!isError">
-                <div class="right-side-background" *pw-skeleton="isLoading; height:'686px'; width: '100%';">
-                    <app-next-hour-weather [ngClass]="{'forecastcard-prerender' : isPrerender}"
-                        [actualHourIndex]="actualHourIndex" [temperatures]="forecastData$.hourly.temperature_2m"
-                        [weatherTimes]="forecastData$.hourly.time" [weatherCodes]="forecastData$.hourly.weathercode">
-                    </app-next-hour-weather>
-                    <app-weather-week-info [ngClass]="{'forecastcard-prerender' : isPrerender}"
-                        [weekDays]="forecastData$.daily.time" [weekMaxTemperature]="forecastData$.daily.temperature_2m_max"
-                        [weekWeatherCode]="forecastData$.daily.weathercode">
-                    </app-weather-week-info>
-                </div>
-            </ng-container>
-        </div>
+      }
     </div>
-    <div class="link-container"><a *ngIf="!isLoading && !isError" class="credits-text" href="https://open-meteo.com/" target="_blank">Datos del clima por Open-Meteo.com</a></div>
+    @if (!isOneColumn) {
+      <div class="right-side">
+        <div class="actual-day">
+          <!--  <p>{{actualDay.weekDay}}</p> -->
+          <!-- <p>{{actualDay.date}}</p> -->
+        </div>
+        @if (!isError) {
+          <div class="right-side-background" *pw-skeleton="isLoading; height:'686px'; width: '100%';">
+            <app-next-hour-weather [ngClass]="{'forecastcard-prerender' : isPrerender}"
+              [actualHourIndex]="actualHourIndex" [temperatures]="forecastData$.hourly.temperature_2m"
+              [weatherTimes]="forecastData$.hourly.time" [weatherCodes]="forecastData$.hourly.weathercode">
+            </app-next-hour-weather>
+            <app-weather-week-info [ngClass]="{'forecastcard-prerender' : isPrerender}"
+              [weekDays]="forecastData$.daily.time" [weekMaxTemperature]="forecastData$.daily.temperature_2m_max"
+              [weekWeatherCode]="forecastData$.daily.weathercode">
+            </app-weather-week-info>
+          </div>
+        }
+      </div>
+    }
+  </div>
+  <div class="link-container">@if (!isLoading && !isError) {
+    <a class="credits-text" href="https://open-meteo.com/" target="_blank">Datos del clima por Open-Meteo.com</a>
+  }</div>
 </div>
-<div class="error-state" *ngIf="isError">
-
+@if (isError) {
+  <div class="error-state">
     <app-nolocation-warning style="margin-bottom:12px; display:block" [title]=warningInfo.title
-        [message]=warningInfo.message [imageURL]=warningInfo.imageURL>
+      [message]=warningInfo.message [imageURL]=warningInfo.imageURL>
     </app-nolocation-warning>
-    <app-nolocation-buttons *ngIf="isDefaultLocation && !isDefaultLocationSet; else apiErrorButton"
+    @if (isDefaultLocation && !isDefaultLocationSet) {
+      <app-nolocation-buttons
         (errorLocation)="showLocationErrorMessage($event)" (locationFound)="reloadHome()">
-    </app-nolocation-buttons>
-    <ng-template #apiErrorButton>
-        <button style="width: 100%;" pw-flat-button color="primary" (click)="reloadHome()" *ngIf="isError">Intentar de nuevo</button>
-    </ng-template>
-</div>
+      </app-nolocation-buttons>
+    } @else {
+      @if (isError) {
+        <button style="width: 100%;" pw-flat-button color="primary" (click)="reloadHome()">Intentar de nuevo</button>
+      }
+    }
+  </div>
+}

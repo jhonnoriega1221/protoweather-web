@@ -1,13 +1,15 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { PlaceService } from '../../services/place.service';
 import { Place } from '../../models/place';
 import { Subscription } from 'rxjs';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-location-search-autocomplete',
-  templateUrl: './location-search-autocomplete.component.html',
-  styleUrls: ['./location-search-autocomplete.component.scss']
+    selector: 'app-location-search-autocomplete',
+    templateUrl: './location-search-autocomplete.component.html',
+    styleUrls: ['./location-search-autocomplete.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class LocationSearchAutocompleteComponent implements OnInit {
 

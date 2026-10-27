@@ -1,14 +1,16 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { PwSnackbarConfig } from '../../models/pw-snackbar-config';
 
 @Component({
-  selector: 'app-snackbar',
-  template: `
+    selector: 'app-snackbar',
+    template: `
     <div class="snackbar" #snackbarElementRef>
       <p>{{message}}</p>
     </div>
   `,
-  styleUrls: ['./snackbar.component.scss']
+    styleUrls: ['./snackbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SnackbarComponent {
 

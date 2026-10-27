@@ -1,10 +1,12 @@
-import { AfterViewInit, Component, ElementRef, Input, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { ImageService } from 'src/app/ui/image/services/image.service';
+import { AfterViewInit, Component, ElementRef, Input, QueryList, ViewChild, ViewChildren, ChangeDetectionStrategy } from '@angular/core';
+import { ImageService } from '../../../ui/image/services/image.service';
 
 @Component({
-  selector: 'pw-clouds',
-  templateUrl: './clouds.component.html',
-  styleUrls: ['./clouds.component.scss']
+    selector: 'pw-clouds',
+    templateUrl: './clouds.component.html',
+    styleUrls: ['./clouds.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class CloudsComponent implements AfterViewInit {
 

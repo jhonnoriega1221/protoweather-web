@@ -1,10 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-back-title',
-  templateUrl: './back-title.component.html',
-  styleUrls: ['./back-title.component.scss']
+    selector: 'app-back-title',
+    templateUrl: './back-title.component.html',
+    styleUrls: ['./back-title.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class BackTitleComponent {
 

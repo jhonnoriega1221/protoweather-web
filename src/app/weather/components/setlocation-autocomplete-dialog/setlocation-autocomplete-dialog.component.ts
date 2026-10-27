@@ -1,10 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { Place } from '../../models/place';
 
 @Component({
-  selector: 'app-setlocation-autocomplete-dialog',
-  templateUrl: './setlocation-autocomplete-dialog.component.html',
-  styleUrls: ['./setlocation-autocomplete-dialog.component.scss']
+    selector: 'app-setlocation-autocomplete-dialog',
+    templateUrl: './setlocation-autocomplete-dialog.component.html',
+    styleUrls: ['./setlocation-autocomplete-dialog.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SetlocationAutocompleteDialogComponent {
 

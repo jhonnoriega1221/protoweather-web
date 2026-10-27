@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[pw-outline-button]'
+    selector: '[pw-outline-button]',
+    standalone: false
 })
 export class PwOutlineButtonDirective {
 

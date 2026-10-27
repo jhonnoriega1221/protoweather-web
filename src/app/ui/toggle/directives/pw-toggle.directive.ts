@@ -1,7 +1,8 @@
 import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[pw-toggle]'
+    selector: '[pw-toggle]',
+    standalone: false
 })
 export class PwToggleDirective {
 

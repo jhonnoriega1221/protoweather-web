@@ -1,5 +1,5 @@
 {
-  "name": "angular-protoweather",
+  "name": "protoweather-web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,29 +10,34 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^17.1.1",
-    "@angular/compiler": "^17.1.1",
-    "@angular/core": "^17.1.1",
-    "@angular/forms": "^17.1.1",
-    "@angular/platform-browser": "^17.1.1",
-    "@angular/platform-browser-dynamic": "^17.1.1",
-    "@angular/router": "^17.1.1",
+    "@angular/common": "^22.2.3",
+    "@angular/compiler": "^22.2.3",
+    "@angular/core": "^22.2.3",
+    "@angular/forms": "^22.2.3",
+    "@angular/platform-browser": "^22.2.3",
+    "@angular/platform-browser-dynamic": "^22.2.3",
+    "@angular/router": "^22.2.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.3"
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.1.1",
-    "@angular/cli": "~17.1.1",
-    "@angular/compiler-cli": "^17.1.1",
+    "@angular/build": "^22.1.9",
+    "@angular/cli": "~22.2.4",
+    "@angular/compiler-cli": "^22.2.3",
     "@types/jasmine": "~4.0.0",
-    "@types/node": "^14.15.0",
+    "@types/node": "^26.6.5",
+    "istanbul-lib-instrument": "^6.0.3",
     "jasmine-core": "~4.1.0",
-    "karma": "~6.3.0",
+    "karma": "~6.4.4",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "^5.3.3"
+    "typescript": "^6.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "@parcel/watcher@2.6.0": true
   }
 }

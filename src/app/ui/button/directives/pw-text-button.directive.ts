@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[pw-text-button]'
+    selector: '[pw-text-button]',
+    standalone: false
 })
 export class PwTextButtonDirective {
 

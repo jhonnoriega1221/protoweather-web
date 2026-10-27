@@ -1,10 +1,14 @@
-<div class="wrapper" *ngIf="!isSearchingLocation">
+@if (!isSearchingLocation) {
+  <div class="wrapper">
     <button pw-flat-button color="primary" (click)="getLocation()">Detectar mi ubicación</button>
     <p class="or-text">o</p>
     <button pw-outline-button color="primary" (click)="openSetLocationDialog()">Seleccionar una ciudad manualmente</button>
-</div>
+  </div>
+}
 
-<div *ngIf="isSearchingLocation" class="wrapper">
+@if (isSearchingLocation) {
+  <div class="wrapper">
     <pw-spinner style="margin:0 auto" color="primary"></pw-spinner>
     <p>Buscando ubicación</p>
-</div>
+  </div>
+}

@@ -1,7 +1,8 @@
 import { Directive, EventEmitter, ElementRef, HostBinding, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
-  selector: '[pw-autocomplete-item]'
+    selector: '[pw-autocomplete-item]',
+    standalone: false
 })
 export class PwAutocompleteItemDirective {
 
@@ -13,7 +14,7 @@ export class PwAutocompleteItemDirective {
     return "button text-button autocomplete-item"
   }
 
-  @HostListener('click', ['$event'])
+  @HostListener('click')
   onClick(){
     this.optionSelected.emit(this.el.nativeElement.value)
   }

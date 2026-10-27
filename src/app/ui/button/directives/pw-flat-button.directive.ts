@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[pw-flat-button]'
+    selector: '[pw-flat-button]',
+    standalone: false
 })
 export class PwFlatButtonDirective {
 

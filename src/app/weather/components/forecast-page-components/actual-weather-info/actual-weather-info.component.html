@@ -1,6 +1,8 @@
 <app-wrapper-header text="Visión general de hoy"></app-wrapper-header>
 <div class="wrapper">
-    <div class="info-item-card app-card" *ngFor="let actualWeatherCard of actualWeatherCards">
-        <app-card-info [showIcon]="!isSmallScreen" [icon]="actualWeatherCard.icon" [title]="actualWeatherCard.title" [text]="actualWeatherCard.text" ></app-card-info>
+  @for (actualWeatherCard of actualWeatherCards; track actualWeatherCard) {
+    <div class="info-item-card app-card">
+      <app-card-info [showIcon]="!isSmallScreen" [icon]="actualWeatherCard.icon" [title]="actualWeatherCard.title" [text]="actualWeatherCard.text" ></app-card-info>
     </div>
+  }
 </div>

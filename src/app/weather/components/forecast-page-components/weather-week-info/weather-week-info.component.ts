@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { WeatherService } from '../../../services/weather.service';
 
 interface forecastDay {
@@ -9,9 +9,11 @@ interface forecastDay {
 }
 
 @Component({
-  selector: 'app-weather-week-info',
-  templateUrl: './weather-week-info.component.html',
-  styleUrls: ['./weather-week-info.component.scss']
+    selector: 'app-weather-week-info',
+    templateUrl: './weather-week-info.component.html',
+    styleUrls: ['./weather-week-info.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class WeatherWeekInfoComponent implements OnInit {
 

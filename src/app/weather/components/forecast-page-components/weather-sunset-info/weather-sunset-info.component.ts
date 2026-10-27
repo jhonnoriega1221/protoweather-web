@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { WeatherCardData } from '../../../models/weather-card-data';
 
 interface sunsetInfo {
@@ -9,9 +9,11 @@ interface sunsetInfo {
 }
 
 @Component({
-  selector: 'app-weather-sunset-info',
-  templateUrl: './weather-sunset-info.component.html',
-  styleUrls: ['./weather-sunset-info.component.scss']
+    selector: 'app-weather-sunset-info',
+    templateUrl: './weather-sunset-info.component.html',
+    styleUrls: ['./weather-sunset-info.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class WeatherSunsetInfoComponent implements OnInit {
 

@@ -1,9 +1,11 @@
-import { Component, Input, OnInit , EventEmitter, Output} from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-favorite-place-card',
-  templateUrl: './favorite-place-card.component.html',
-  styleUrls: ['./favorite-place-card.component.scss']
+    selector: 'app-favorite-place-card',
+    templateUrl: './favorite-place-card.component.html',
+    styleUrls: ['./favorite-place-card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class FavoritePlaceCardComponent implements OnInit {
 

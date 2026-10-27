@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, HostListener, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener, OnDestroy, PLATFORM_ID, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { PlaceService } from '../../services/place.service';
 import { SetlocationAutocompleteDialogComponent } from '../setlocation-autocomplete-dialog/setlocation-autocomplete-dialog.component';
 import { Place } from '../../models/place';
@@ -7,9 +7,11 @@ import { Subscription } from 'rxjs';
 import { PwDialog } from 'src/app/ui/dialog/services/dialog.service';
 
 @Component({
-  selector: 'app-nolocation-buttons',
-  templateUrl: './nolocation-buttons.component.html',
-  styleUrls: ['./nolocation-buttons.component.scss']
+    selector: 'app-nolocation-buttons',
+    templateUrl: './nolocation-buttons.component.html',
+    styleUrls: ['./nolocation-buttons.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class NolocationButtonsComponent implements OnDestroy {
 

@@ -1,27 +1,33 @@
 <div class="wrapper">
-    <div class="title-searchbar">
-        <h2 class="page-title">Buscar</h2>
-        <app-location-search-autocomplete class="search-bar" (locationSelected)="searchLocation($event)"></app-location-search-autocomplete>
+  <div class="title-searchbar">
+    <h2 class="page-title">Buscar</h2>
+    <app-location-search-autocomplete class="search-bar" (locationSelected)="searchLocation($event)"></app-location-search-autocomplete>
+  </div>
+
+  @if (!(historySearch.length == 0)) {
+    <div class="recent-searches">
+      <p class="recent-title">Búsquedas recientes</p>
+      <ul class="list">
+        @for (historySearchItem of historySearch; track historySearchItem) {
+          <div class="list-item-wrapper">
+            <i class="fa-solid fa-history recent-icon"></i>
+            <a [routerLink]="['/forecast/cartagena']" class="list-item" [routerLink]="['/forecast/', historySearchItem.placeId]" >
+              {{historySearchItem.name}}
+            </a>
+            <button class="icon-button" (click)="deleteHistoryItem(historySearchItem)">
+              <i class="fa-solid fa-close icon recent-icon"></i>
+            </button>
+          </div>
+        }
+      </ul>
     </div>
-    
-    <div class="recent-searches" *ngIf="!(historySearch.length == 0)">
-        <p class="recent-title">Búsquedas recientes</p>
-        <ul class="list">
-            <div class="list-item-wrapper" *ngFor="let historySearchItem of historySearch">
-                <i class="fa-solid fa-history recent-icon"></i>
-                <a [routerLink]="['/forecast/cartagena']" class="list-item" [routerLink]="['/forecast/', historySearchItem.placeId]" >
-                    {{historySearchItem.name}}
-                </a>
-                <button class="icon-button" (click)="deleteHistoryItem(historySearchItem)">
-                    <i class="fa-solid fa-close icon recent-icon"></i>
-                </button>
-            </div>
-        </ul>
+  }
+
+  @if (historySearch.length == 0) {
+    <div class="empty-state">
+      <app-nolocation-warning [title]=emptyHistory.title [message]=emptyHistory.message [imageURL]=emptyHistory.imageURL></app-nolocation-warning>
     </div>
-    
-    <div class="empty-state" *ngIf="historySearch.length == 0">
-        <app-nolocation-warning [title]=emptyHistory.title [message]=emptyHistory.message [imageURL]=emptyHistory.imageURL></app-nolocation-warning>
-    </div>
-    
+  }
+
 </div>
 

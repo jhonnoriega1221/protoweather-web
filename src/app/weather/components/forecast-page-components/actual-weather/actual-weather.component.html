@@ -1,42 +1,44 @@
 <div class="wrapper">
-    <app-actual-weather-background [weatherCodeData]="weatherCodeData" [actualDate]="actualDay" class="background"></app-actual-weather-background>
-    <div class="place-name-date">
-        <div class="place-name">
-            <div class="place-name-container">
-                <i class="icon-small fa-solid fa-map-marker-alt"></i>
-                <span>{{place}}</span>
-            </div>
-            <button class="icon-favorite-button" *ngIf="!isDefaultLocation" (click)="toggleFavorite()">
-                <i class="favorite-button-icon" [ngClass]="favoriteIconStatus"></i>
-                <div class="icon-favorite-button-background"></div>
-            </button>
-        </div>
-        <p class="actual-date">{{actualDay}}</p>
+  <app-actual-weather-background [weatherCodeData]="weatherCodeData" [actualDate]="actualDay" class="background"></app-actual-weather-background>
+  <div class="place-name-date">
+    <div class="place-name">
+      <div class="place-name-container">
+        <i class="icon-small fa-solid fa-map-marker-alt"></i>
+        <span>{{place}}</span>
+      </div>
+      @if (!isDefaultLocation) {
+        <button class="icon-favorite-button" (click)="toggleFavorite()">
+          <i class="favorite-button-icon" [ngClass]="favoriteIconStatus"></i>
+          <div class="icon-favorite-button-background"></div>
+        </button>
+      }
     </div>
-    <div class="temperature-status">
-        <div class="temperature">
-            <p>{{temperature | number:'1.0-0'}}</p>
-            <span>°c</span>
-        </div>
-        <div class="weather-status">
-            <p>{{weatherCodeData.description}}</p>
-        </div>
+    <p class="actual-date">{{actualDay}}</p>
+  </div>
+  <div class="temperature-status">
+    <div class="temperature">
+      <p>{{temperature | number:'1.0-0'}}</p>
+      <span>°c</span>
     </div>
-    <div class="bottom-content">
-        <div class="bottom-info-item">
-            <i class="icon-small fa-solid fa-air-freshener"></i>
-            <span class="bottom-info-item-text">Humedad</span>
-            <span class="info-value">{{humidity}}%</span>
-        </div>
-        <div class="bottom-info-item">
-            <i class="icon-small fa-solid fa-cloud-rain"></i>
-            <span class="bottom-info-item-text">Precipitación</span>
-            <span class="info-value">{{precipitation}} mm</span>
-        </div>
-        <div class="bottom-info-item">
-            <i class="icon-small fa-solid fa-radiation-alt"></i>
-            <span class="bottom-info-item-text">Radiación</span>
-            <span class="info-value">{{radiation}} W/m²</span>
-        </div>
+    <div class="weather-status">
+      <p>{{weatherCodeData.description}}</p>
     </div>
+  </div>
+  <div class="bottom-content">
+    <div class="bottom-info-item">
+      <i class="icon-small fa-solid fa-air-freshener"></i>
+      <span class="bottom-info-item-text">Humedad</span>
+      <span class="info-value">{{humidity}}%</span>
+    </div>
+    <div class="bottom-info-item">
+      <i class="icon-small fa-solid fa-cloud-rain"></i>
+      <span class="bottom-info-item-text">Precipitación</span>
+      <span class="info-value">{{precipitation}} mm</span>
+    </div>
+    <div class="bottom-info-item">
+      <i class="icon-small fa-solid fa-radiation-alt"></i>
+      <span class="bottom-info-item-text">Radiación</span>
+      <span class="info-value">{{radiation}} W/m²</span>
+    </div>
+  </div>
 </div>

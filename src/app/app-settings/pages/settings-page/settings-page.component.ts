@@ -1,13 +1,15 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 import settingsData from '../../data/settings.json';
 import themesData from '../../data/themes.json'; 
 import { SettingItem, OptionSelectList } from '../../models/setting-item';
 import { AppThemeService } from '../../services/app-theme.service';
 
 @Component({
-  selector: 'app-settings-page',
-  templateUrl: './settings-page.component.html',
-  styleUrls: ['./settings-page.component.scss']
+    selector: 'app-settings-page',
+    templateUrl: './settings-page.component.html',
+    styleUrls: ['./settings-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SettingsPageComponent implements OnInit {
 

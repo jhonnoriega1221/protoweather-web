@@ -1,15 +1,17 @@
-import { AfterContentInit, AfterViewInit, Component, ContentChildren, ElementRef, EventEmitter, Output, QueryList, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChildren, ElementRef, EventEmitter, Output, QueryList, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { PwAutocompleteItemDirective } from '../../directives/autocomplete-item.directive';
 
 @Component({
-  selector: 'pw-autocomplete',
-  template: `
+    selector: 'pw-autocomplete',
+    template: `
     <div #autocompleteElementRef class="autocomplete">
       <ng-content></ng-content>
     </div>
   `,
-  styleUrls: ['./autocomplete.component.scss'],
-  exportAs: 'pwAutocomplete'
+    styleUrls: ['./autocomplete.component.scss'],
+    exportAs: 'pwAutocomplete',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AutocompleteComponent implements AfterContentInit {
 

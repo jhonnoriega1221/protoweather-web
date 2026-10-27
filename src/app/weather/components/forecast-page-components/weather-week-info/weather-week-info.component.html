@@ -1,12 +1,14 @@
 <div class="wrapper">
-    <ul class="list app-card">
-        <li *ngFor="let forecastDay of forecastDays; let lastItem = last;" class="list-item">
-            <div class="day-wrapper">
-                <p class="forecast-week-day">{{forecastDay.weekDayName}}</p>
-                <p class="forecast-date">{{forecastDay.weekDayDate}}</p>
-            </div>
-            <p class="temperature">{{forecastDay.maxTemperature | number:'1.0-0'}}ºc</p>
-            <img class="weather-code-icon" [src]=forecastDay.weatherCodeIconURL alt="">
-        </li>
-    </ul>
+  <ul class="list app-card">
+    @for (forecastDay of forecastDays; track forecastDay; let lastItem = $last) {
+      <li class="list-item">
+        <div class="day-wrapper">
+          <p class="forecast-week-day">{{forecastDay.weekDayName}}</p>
+          <p class="forecast-date">{{forecastDay.weekDayDate}}</p>
+        </div>
+        <p class="temperature">{{forecastDay.maxTemperature | number:'1.0-0'}}ºc</p>
+        <img class="weather-code-icon" [src]=forecastDay.weatherCodeIconURL alt="">
+      </li>
+    }
+  </ul>
 </div>
