@@ -3,7 +3,7 @@
   <button pw-flat-button size="small" class="scroll-button scroll-button-back" [disabled]="scrollPosition === 0" (click)="scrollBack(target)">
     <i class="fa-solid fa-angle-left"></i>
   </button>
-  <div (scroll)="onScroll(target)" #target class="wrapper">
+  <div (scroll)="onScroll($event)" #target class="wrapper">
     @for (hourly of hourlyForecast; track hourly) {
       <div class="forecast-list-item app-card">
         <p class="time">{{hourly.time}}</p>
