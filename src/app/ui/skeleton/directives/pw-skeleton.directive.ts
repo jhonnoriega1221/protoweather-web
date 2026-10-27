@@ -3,7 +3,8 @@ import { Directive, Input, TemplateRef, ViewContainerRef, SimpleChanges, PLATFOR
 import { SkeletonComponent } from '../components/skeleton/skeleton.component';
 
 @Directive({
-  selector: '[pw-skeleton]'
+    selector: '[pw-skeleton]',
+    standalone: false
 })
 export class PwSkeletonDirective {
 

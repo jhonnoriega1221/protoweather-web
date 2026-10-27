@@ -5,9 +5,10 @@ import { SettingItem, OptionSelectList } from '../../models/setting-item';
 import { AppThemeService } from '../../services/app-theme.service';
 
 @Component({
-  selector: 'app-settings-page',
-  templateUrl: './settings-page.component.html',
-  styleUrls: ['./settings-page.component.scss']
+    selector: 'app-settings-page',
+    templateUrl: './settings-page.component.html',
+    styleUrls: ['./settings-page.component.scss'],
+    standalone: false
 })
 export class SettingsPageComponent implements OnInit {
 

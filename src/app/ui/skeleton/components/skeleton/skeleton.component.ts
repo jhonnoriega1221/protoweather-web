@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'pw-skeleton',
-  templateUrl: './skeleton.component.html',
-  styleUrls: ['./skeleton.component.scss']
+    selector: 'pw-skeleton',
+    templateUrl: './skeleton.component.html',
+    styleUrls: ['./skeleton.component.scss'],
+    standalone: false
 })
 export class SkeletonComponent {
 

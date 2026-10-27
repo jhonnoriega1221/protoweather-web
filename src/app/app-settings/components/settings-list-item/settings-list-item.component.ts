@@ -2,9 +2,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { OptionSelectList } from '../../models/setting-item';
 
 @Component({
-  selector: 'app-settings-list-item',
-  templateUrl: './settings-list-item.component.html',
-  styleUrls: ['./settings-list-item.component.scss']
+    selector: 'app-settings-list-item',
+    templateUrl: './settings-list-item.component.html',
+    styleUrls: ['./settings-list-item.component.scss'],
+    standalone: false
 })
 export class SettingsListItemComponent {
   @Input() type:string|'toggle'|'select'|'url' = 'url';

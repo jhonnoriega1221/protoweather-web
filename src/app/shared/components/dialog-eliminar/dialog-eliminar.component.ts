@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-dialog-eliminar',
-  templateUrl: './dialog-eliminar.component.html',
-  styleUrls: ['./dialog-eliminar.component.scss']
+    selector: 'app-dialog-eliminar',
+    templateUrl: './dialog-eliminar.component.html',
+    styleUrls: ['./dialog-eliminar.component.scss'],
+    standalone: false
 })
 export class DialogEliminarComponent {
     @Input() data:any;

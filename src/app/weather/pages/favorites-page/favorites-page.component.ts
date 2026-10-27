@@ -9,9 +9,10 @@ import { PwDialog } from 'src/app/ui/dialog/services/dialog.service';
 import { PwSnackbar } from 'src/app/ui/snackbar/services/snackbar.service';
 
 @Component({
-  selector: 'app-favorites-page',
-  templateUrl: './favorites-page.component.html',
-  styleUrls: ['./favorites-page.component.scss']
+    selector: 'app-favorites-page',
+    templateUrl: './favorites-page.component.html',
+    styleUrls: ['./favorites-page.component.scss'],
+    standalone: false
 })
 export class FavoritesPageComponent implements OnInit {
 

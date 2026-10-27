@@ -21,9 +21,10 @@ interface ActualDay{
 }
 
 @Component({
-  selector: 'app-forecast-page',
-  templateUrl: './forecast-page.component.html',
-  styleUrls: ['./forecast-page.component.scss']
+    selector: 'app-forecast-page',
+    templateUrl: './forecast-page.component.html',
+    styleUrls: ['./forecast-page.component.scss'],
+    standalone: false
 })
 export class ForecastPageComponent implements OnInit, OnDestroy {
   constructor(

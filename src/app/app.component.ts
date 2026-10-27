@@ -3,9 +3,10 @@ import { Component, PLATFORM_ID, Inject } from '@angular/core';
 import { AppThemeService } from './app-settings/services/app-theme.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
   constructor( private _appThemeService:AppThemeService, @Inject(PLATFORM_ID) private platformId:any){

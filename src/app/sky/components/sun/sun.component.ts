@@ -1,9 +1,10 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { ImageService } from 'src/app/ui/image/services/image.service';
 @Component({
-  selector: 'pw-sun',
-  templateUrl: './sun.component.html',
-  styleUrls: ['./sun.component.scss']
+    selector: 'pw-sun',
+    templateUrl: './sun.component.html',
+    styleUrls: ['./sun.component.scss'],
+    standalone: false
 })
 export class SunComponent implements AfterViewInit {
 

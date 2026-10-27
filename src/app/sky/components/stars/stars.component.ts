@@ -2,9 +2,10 @@ import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular
 import { ImageService } from 'src/app/ui/image/services/image.service';
 
 @Component({
-  selector: 'pw-stars',
-  templateUrl: './stars.component.html',
-  styleUrls: ['./stars.component.scss']
+    selector: 'pw-stars',
+    templateUrl: './stars.component.html',
+    styleUrls: ['./stars.component.scss'],
+    standalone: false
 })
 export class StarsComponent implements AfterViewInit {
 

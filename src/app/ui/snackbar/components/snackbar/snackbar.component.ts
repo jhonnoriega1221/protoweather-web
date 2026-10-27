@@ -2,13 +2,14 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { PwSnackbarConfig } from '../../models/pw-snackbar-config';
 
 @Component({
-  selector: 'app-snackbar',
-  template: `
+    selector: 'app-snackbar',
+    template: `
     <div class="snackbar" #snackbarElementRef>
       <p>{{message}}</p>
     </div>
   `,
-  styleUrls: ['./snackbar.component.scss']
+    styleUrls: ['./snackbar.component.scss'],
+    standalone: false
 })
 export class SnackbarComponent {
 

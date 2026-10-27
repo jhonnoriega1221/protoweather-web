@@ -1,7 +1,8 @@
 import { Directive, EventEmitter, ElementRef, HostBinding, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
-  selector: '[pw-autocomplete-item]'
+    selector: '[pw-autocomplete-item]',
+    standalone: false
 })
 export class PwAutocompleteItemDirective {
 

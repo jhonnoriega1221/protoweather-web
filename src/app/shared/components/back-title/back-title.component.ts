@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-back-title',
-  templateUrl: './back-title.component.html',
-  styleUrls: ['./back-title.component.scss']
+    selector: 'app-back-title',
+    templateUrl: './back-title.component.html',
+    styleUrls: ['./back-title.component.scss'],
+    standalone: false
 })
 export class BackTitleComponent {
 

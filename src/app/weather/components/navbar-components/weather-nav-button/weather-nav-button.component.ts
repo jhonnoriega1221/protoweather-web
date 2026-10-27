@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-weather-nav-button',
-  templateUrl: './weather-nav-button.component.html',
-  styleUrls: ['./weather-nav-button.component.scss']
+    selector: 'app-weather-nav-button',
+    templateUrl: './weather-nav-button.component.html',
+    styleUrls: ['./weather-nav-button.component.scss'],
+    standalone: false
 })
 export class WeatherNavButtonComponent implements OnInit {
 

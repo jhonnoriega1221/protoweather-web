@@ -8,9 +8,10 @@ interface Hourly{
 }
 
 @Component({
-  selector: 'app-next-hour-weather',
-  templateUrl: './next-hour-weather.component.html',
-  styleUrls: ['./next-hour-weather.component.scss']
+    selector: 'app-next-hour-weather',
+    templateUrl: './next-hour-weather.component.html',
+    styleUrls: ['./next-hour-weather.component.scss'],
+    standalone: false
 })
 export class NextHourWeatherComponent implements OnInit {
   

@@ -9,9 +9,10 @@ interface Message {
 }
 
 @Component({
-  selector: 'app-setlocation-page',
-  templateUrl: './setlocation-page.component.html',
-  styleUrls: ['./setlocation-page.component.scss']
+    selector: 'app-setlocation-page',
+    templateUrl: './setlocation-page.component.html',
+    styleUrls: ['./setlocation-page.component.scss'],
+    standalone: false
 })
 export class SetlocationPageComponent implements OnInit {
 

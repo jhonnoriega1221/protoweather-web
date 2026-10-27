@@ -9,9 +9,10 @@ import { PwDialog } from 'src/app/ui/dialog/services/dialog.service';
 import { PwSnackbar } from 'src/app/ui/snackbar/services/snackbar.service';
 
 @Component({
-  selector: 'app-actual-weather',
-  templateUrl: './actual-weather.component.html',
-  styleUrls: ['./actual-weather.component.scss']
+    selector: 'app-actual-weather',
+    templateUrl: './actual-weather.component.html',
+    styleUrls: ['./actual-weather.component.scss'],
+    standalone: false
 })
 export class ActualWeatherComponent implements OnInit {
 

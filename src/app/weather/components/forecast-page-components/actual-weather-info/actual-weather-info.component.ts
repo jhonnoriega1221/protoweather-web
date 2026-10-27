@@ -3,9 +3,10 @@ import { Component, OnInit, Input, HostListener, PLATFORM_ID, Inject } from '@an
 import { WeatherCardData } from '../../../models/weather-card-data';
 
 @Component({
-  selector: 'app-actual-weather-info',
-  templateUrl: './actual-weather-info.component.html',
-  styleUrls: ['./actual-weather-info.component.scss']
+    selector: 'app-actual-weather-info',
+    templateUrl: './actual-weather-info.component.html',
+    styleUrls: ['./actual-weather-info.component.scss'],
+    standalone: false
 })
 
 export class ActualWeatherInfoComponent implements OnInit {

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'pw-sky-gradient',
-  templateUrl: './sky-gradient.component.html',
-  styleUrls: ['./sky-gradient.component.scss']
+    selector: 'pw-sky-gradient',
+    templateUrl: './sky-gradient.component.html',
+    styleUrls: ['./sky-gradient.component.scss'],
+    standalone: false
 })
 export class SkyGradientComponent {
 

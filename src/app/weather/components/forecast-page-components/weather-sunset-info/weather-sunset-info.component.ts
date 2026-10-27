@@ -9,9 +9,10 @@ interface sunsetInfo {
 }
 
 @Component({
-  selector: 'app-weather-sunset-info',
-  templateUrl: './weather-sunset-info.component.html',
-  styleUrls: ['./weather-sunset-info.component.scss']
+    selector: 'app-weather-sunset-info',
+    templateUrl: './weather-sunset-info.component.html',
+    styleUrls: ['./weather-sunset-info.component.scss'],
+    standalone: false
 })
 export class WeatherSunsetInfoComponent implements OnInit {
 

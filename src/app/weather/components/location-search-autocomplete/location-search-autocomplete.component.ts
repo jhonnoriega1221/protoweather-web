@@ -5,9 +5,10 @@ import { Subscription } from 'rxjs';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-location-search-autocomplete',
-  templateUrl: './location-search-autocomplete.component.html',
-  styleUrls: ['./location-search-autocomplete.component.scss']
+    selector: 'app-location-search-autocomplete',
+    templateUrl: './location-search-autocomplete.component.html',
+    styleUrls: ['./location-search-autocomplete.component.scss'],
+    standalone: false
 })
 export class LocationSearchAutocompleteComponent implements OnInit {
 

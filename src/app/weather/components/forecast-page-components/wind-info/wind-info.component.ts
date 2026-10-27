@@ -7,9 +7,10 @@ interface WindInfo {
 }
 
 @Component({
-  selector: 'app-wind-info',
-  templateUrl: './wind-info.component.html',
-  styleUrls: ['./wind-info.component.scss']
+    selector: 'app-wind-info',
+    templateUrl: './wind-info.component.html',
+    styleUrls: ['./wind-info.component.scss'],
+    standalone: false
 })
 export class WindInfoComponent implements OnInit {
 

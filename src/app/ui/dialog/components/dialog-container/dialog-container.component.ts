@@ -2,13 +2,14 @@ import { Component, Input, ViewContainerRef, AfterViewInit, ViewChild, Component
 import {PwDialogConfig} from '../../models/pw-dialog-config'
 
 @Component({
-  selector: 'pw-dialog-container',
-  template:`
+    selector: 'pw-dialog-container',
+    template: `
     <dialog #dialogElementRef>
       <ng-container #vc></ng-container>
     </dialog>
   `,
-  styleUrls: ['./dialog-container.component.scss']
+    styleUrls: ['./dialog-container.component.scss'],
+    standalone: false
 })
 export class DialogContainerComponent implements AfterViewInit {
   

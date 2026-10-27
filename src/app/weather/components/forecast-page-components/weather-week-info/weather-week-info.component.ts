@@ -9,9 +9,10 @@ interface forecastDay {
 }
 
 @Component({
-  selector: 'app-weather-week-info',
-  templateUrl: './weather-week-info.component.html',
-  styleUrls: ['./weather-week-info.component.scss']
+    selector: 'app-weather-week-info',
+    templateUrl: './weather-week-info.component.html',
+    styleUrls: ['./weather-week-info.component.scss'],
+    standalone: false
 })
 export class WeatherWeekInfoComponent implements OnInit {
 

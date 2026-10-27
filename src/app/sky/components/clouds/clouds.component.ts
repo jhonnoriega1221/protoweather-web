@@ -2,9 +2,10 @@ import { AfterViewInit, Component, ElementRef, Input, QueryList, ViewChild, View
 import { ImageService } from 'src/app/ui/image/services/image.service';
 
 @Component({
-  selector: 'pw-clouds',
-  templateUrl: './clouds.component.html',
-  styleUrls: ['./clouds.component.scss']
+    selector: 'pw-clouds',
+    templateUrl: './clouds.component.html',
+    styleUrls: ['./clouds.component.scss'],
+    standalone: false
 })
 export class CloudsComponent implements AfterViewInit {
 

@@ -7,9 +7,10 @@ interface NavbarItem {
 }
 
 @Component({
-  selector: 'app-weather-navbar',
-  templateUrl: './weather-navbar.component.html',
-  styleUrls: ['./weather-navbar.component.scss']
+    selector: 'app-weather-navbar',
+    templateUrl: './weather-navbar.component.html',
+    styleUrls: ['./weather-navbar.component.scss'],
+    standalone: false
 })
 export class WeatherNavbarComponent implements OnInit {
 

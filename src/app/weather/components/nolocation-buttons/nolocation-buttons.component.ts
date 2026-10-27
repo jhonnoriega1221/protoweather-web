@@ -7,9 +7,10 @@ import { Subscription } from 'rxjs';
 import { PwDialog } from 'src/app/ui/dialog/services/dialog.service';
 
 @Component({
-  selector: 'app-nolocation-buttons',
-  templateUrl: './nolocation-buttons.component.html',
-  styleUrls: ['./nolocation-buttons.component.scss']
+    selector: 'app-nolocation-buttons',
+    templateUrl: './nolocation-buttons.component.html',
+    styleUrls: ['./nolocation-buttons.component.scss'],
+    standalone: false
 })
 export class NolocationButtonsComponent implements OnDestroy {
 

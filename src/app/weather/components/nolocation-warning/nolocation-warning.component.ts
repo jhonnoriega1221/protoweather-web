@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-nolocation-warning',
-  templateUrl: './nolocation-warning.component.html',
-  styleUrls: ['./nolocation-warning.component.scss']
+    selector: 'app-nolocation-warning',
+    templateUrl: './nolocation-warning.component.html',
+    styleUrls: ['./nolocation-warning.component.scss'],
+    standalone: false
 })
 export class NolocationWarningComponent implements OnInit {
 

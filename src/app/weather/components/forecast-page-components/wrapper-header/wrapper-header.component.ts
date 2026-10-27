@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-wrapper-header',
-  templateUrl: './wrapper-header.component.html',
-  styleUrls: ['./wrapper-header.component.scss']
+    selector: 'app-wrapper-header',
+    templateUrl: './wrapper-header.component.html',
+    styleUrls: ['./wrapper-header.component.scss'],
+    standalone: false
 })
 export class WrapperHeaderComponent implements OnInit {
 

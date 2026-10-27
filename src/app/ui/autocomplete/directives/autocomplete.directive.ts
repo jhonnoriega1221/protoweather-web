@@ -2,7 +2,8 @@ import { AfterViewInit, ComponentRef, Directive, ElementRef, HostListener, Input
 import { AutocompleteComponent } from '../components/autocomplete/autocomplete.component';
 
 @Directive({
-  selector: '[pwAutocomplete]'
+    selector: '[pwAutocomplete]',
+    standalone: false
 })
 export class AutocompleteDirective {
 
