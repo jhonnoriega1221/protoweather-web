@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -12,6 +12,7 @@ interface Message {
     selector: 'app-setlocation-page',
     templateUrl: './setlocation-page.component.html',
     styleUrls: ['./setlocation-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SetlocationPageComponent implements OnInit {

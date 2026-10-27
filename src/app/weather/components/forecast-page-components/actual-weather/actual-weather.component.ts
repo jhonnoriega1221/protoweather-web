@@ -1,6 +1,6 @@
 //https://icons8.com/icon/set/weather/color
 // [ngStyle]="{'background-image': 'url('+ actualBackground.backgroundURL+')'}"
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { WeatherCode } from '../../../models/weatherCode';
 import { WeatherService } from '../../../services/weather.service';
 import { PlaceService } from '../../../services/place.service';
@@ -12,6 +12,7 @@ import { PwSnackbar } from 'src/app/ui/snackbar/services/snackbar.service';
     selector: 'app-actual-weather',
     templateUrl: './actual-weather.component.html',
     styleUrls: ['./actual-weather.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ActualWeatherComponent implements OnInit {

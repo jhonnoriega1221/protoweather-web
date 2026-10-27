@@ -1,10 +1,11 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { ImageService } from 'src/app/ui/image/services/image.service';
+import { AfterViewInit, Component, ElementRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { ImageService } from '../../../ui/image/services/image.service';
 
 @Component({
     selector: 'pw-rain',
     templateUrl: './rain.component.html',
     styleUrls: ['./rain.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class RainComponent implements AfterViewInit{

@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, ContentChildren, ElementRef, EventEmitter, Output, QueryList, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChildren, ElementRef, EventEmitter, Output, QueryList, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { PwAutocompleteItemDirective } from '../../directives/autocomplete-item.directive';
 
 @Component({
@@ -10,6 +10,7 @@ import { PwAutocompleteItemDirective } from '../../directives/autocomplete-item.
   `,
     styleUrls: ['./autocomplete.component.scss'],
     exportAs: 'pwAutocomplete',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AutocompleteComponent implements AfterContentInit {

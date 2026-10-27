@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -17,9 +16,8 @@
     "importHelpers": true,
     "target": "ES2022",
     "paths": {
-      "@protoweather/ui/*": [
-        "app/ui/*"
-      ]
+      "src/*": ["./src/*"],
+      "@protoweather/ui/*": ["./src/app/ui/*"]
     },
     "module": "es2020",
     "resolveJsonModule": true,

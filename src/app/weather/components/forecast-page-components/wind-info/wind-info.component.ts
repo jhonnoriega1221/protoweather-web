@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 interface WindInfo {
   icon:string;
@@ -10,6 +10,7 @@ interface WindInfo {
     selector: 'app-wind-info',
     templateUrl: './wind-info.component.html',
     styleUrls: ['./wind-info.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class WindInfoComponent implements OnInit {

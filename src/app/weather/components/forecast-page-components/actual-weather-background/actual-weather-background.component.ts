@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { WeatherCode } from 'src/app/weather/models/weatherCode';
 
 @Component({
     selector: 'app-actual-weather-background',
     templateUrl: './actual-weather-background.component.html',
     styleUrls: ['./actual-weather-background.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ActualWeatherBackgroundComponent{

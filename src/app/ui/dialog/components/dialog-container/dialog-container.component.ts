@@ -1,4 +1,4 @@
-import { Component, Input, ViewContainerRef, AfterViewInit, ViewChild, ComponentRef, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ViewContainerRef, AfterViewInit, ViewChild, ComponentRef, ElementRef, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import {PwDialogConfig} from '../../models/pw-dialog-config'
 
 @Component({
@@ -9,6 +9,7 @@ import {PwDialogConfig} from '../../models/pw-dialog-config'
     </dialog>
   `,
     styleUrls: ['./dialog-container.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class DialogContainerComponent implements AfterViewInit {

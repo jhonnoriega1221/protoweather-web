@@ -1,11 +1,12 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, OnInit, Input, HostListener, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, Input, HostListener, PLATFORM_ID, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { WeatherCardData } from '../../../models/weather-card-data';
 
 @Component({
     selector: 'app-actual-weather-info',
     templateUrl: './actual-weather-info.component.html',
     styleUrls: ['./actual-weather-info.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ViewChild, PLATFORM_ID, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { PlaceService } from '../../services/place.service';
 import { Forecast } from '../../models/forecast-response';
@@ -24,6 +24,7 @@ interface ActualDay{
     selector: 'app-forecast-page',
     templateUrl: './forecast-page.component.html',
     styleUrls: ['./forecast-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ForecastPageComponent implements OnInit, OnDestroy {

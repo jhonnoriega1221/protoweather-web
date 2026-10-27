@@ -1,10 +1,11 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { ImageService } from 'src/app/ui/image/services/image.service';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { ImageService } from '../../../ui/image/services/image.service';
 
 @Component({
     selector: 'pw-stars',
     templateUrl: './stars.component.html',
     styleUrls: ['./stars.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class StarsComponent implements AfterViewInit {

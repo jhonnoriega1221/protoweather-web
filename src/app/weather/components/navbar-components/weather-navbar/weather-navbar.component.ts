@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, HostListener } from '@angular/core';
+import { Component, Input, OnInit, HostListener, ChangeDetectionStrategy } from '@angular/core';
 
 interface NavbarItem {
   text:string;
@@ -10,6 +10,7 @@ interface NavbarItem {
     selector: 'app-weather-navbar',
     templateUrl: './weather-navbar.component.html',
     styleUrls: ['./weather-navbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class WeatherNavbarComponent implements OnInit {

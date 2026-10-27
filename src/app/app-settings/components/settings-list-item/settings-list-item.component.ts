@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { OptionSelectList } from '../../models/setting-item';
 
 @Component({
     selector: 'app-settings-list-item',
     templateUrl: './settings-list-item.component.html',
     styleUrls: ['./settings-list-item.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SettingsListItemComponent {

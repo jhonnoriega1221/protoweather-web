@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { WeatherService } from '../../../services/weather.service';
 interface Hourly {
   time: string;
@@ -10,6 +10,7 @@ interface Hourly {
   selector: 'app-next-hour-weather',
   templateUrl: './next-hour-weather.component.html',
   styleUrls: ['./next-hour-weather.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class NextHourWeatherComponent implements OnInit {

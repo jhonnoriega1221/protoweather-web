@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID, EnvironmentInjector, createComponent } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, EnvironmentInjector, createComponent, ChangeDetectionStrategy } from '@angular/core';
 import { FavoritePlace } from '../../favorite-place';
 import { Place } from '../../models/place';
 import { PlaceService } from '../../services/place.service';
@@ -12,6 +12,7 @@ import { PwSnackbar } from 'src/app/ui/snackbar/services/snackbar.service';
     selector: 'app-favorites-page',
     templateUrl: './favorites-page.component.html',
     styleUrls: ['./favorites-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class FavoritesPageComponent implements OnInit {

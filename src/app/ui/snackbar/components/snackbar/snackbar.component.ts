@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { PwSnackbarConfig } from '../../models/pw-snackbar-config';
 
 @Component({
@@ -9,6 +9,7 @@ import { PwSnackbarConfig } from '../../models/pw-snackbar-config';
     </div>
   `,
     styleUrls: ['./snackbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SnackbarComponent {
