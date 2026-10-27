@@ -1,31 +1,45 @@
 <div class="wrapper">
-    <h2 class="page-title">Favoritos</h2>
-    <div class="default-places-title">
-        <p class="place-subtitle-caption">Ciudad por defecto</p>
-        <button pw-text-button color="primary" size="small" *ngIf="defaultPlaceName" (click)="toggleEditModeDefault()">
-            <i class="fa-solid" [ngClass]="isEditModeDefault ? 'fa-check' : 'fa-edit'"></i>
-            {{isEditModeDefault ? 'Listo' : 'Editar'}}
-        </button>
-    </div>
-    <app-favorite-place-card  (deletePlace)="deleteDefaultPlace()" *ngIf="defaultPlaceName" [isEditMode]="isEditModeDefault" [isDefaultPlace]="true" placeId="" [name]="defaultPlaceName"
-        class="favorite-card"></app-favorite-place-card>
+  <h2 class="page-title">Favoritos</h2>
+  <div class="default-places-title">
+    <p class="place-subtitle-caption">Ciudad por defecto</p>
+    @if (defaultPlaceName) {
+      <button pw-text-button color="primary" size="small" (click)="toggleEditModeDefault()">
+        <i class="fa-solid" [ngClass]="isEditModeDefault ? 'fa-check' : 'fa-edit'"></i>
+        {{isEditModeDefault ? 'Listo' : 'Editar'}}
+      </button>
+    }
+  </div>
+  @if (defaultPlaceName) {
+    <app-favorite-place-card  (deletePlace)="deleteDefaultPlace()" [isEditMode]="isEditModeDefault" [isDefaultPlace]="true" placeId="" [name]="defaultPlaceName"
+    class="favorite-card"></app-favorite-place-card>
+  }
 
-    <app-add-favorite-place-card *ngIf="!defaultPlaceName" #addDefaultPlace (click)="setDefaultLocation()"
-        class="favorite-card">
+  @if (!defaultPlaceName) {
+    <app-add-favorite-place-card #addDefaultPlace (click)="setDefaultLocation()"
+      class="favorite-card">
     </app-add-favorite-place-card>
+  }
 
-    <div class="default-places-title">
-        <p class="place-subtitle-caption">Ciudades favoritas</p>
-        <button pw-text-button color="primary" size="small" *ngIf="favoritePlaces.length > 0" (click)="toggleEditModeFavorites()">
-            <i class="fa-solid" [ngClass]="isEditModeFavorites ? 'fa-check' : 'fa-edit'"></i>
-            {{isEditModeFavorites ? 'Listo' : 'Editar'}}
-        </button>
-    </div>
-    <ul  class="list">
-        <app-add-favorite-place-card *ngIf="isEditModeFavorites" (click)="addFavoritePlace()"></app-add-favorite-place-card>
-        <app-favorite-place-card (deletePlace)="deleteFavoritePlace(favoritePlace.placeId)" [isEditMode]="isEditModeFavorites" *ngFor="let favoritePlace of favoritePlaces" [isDefaultPlace]="false"
-            [placeId]="favoritePlace.placeId" [name]="favoritePlace.name"></app-favorite-place-card>
-        <app-add-favorite-place-card *ngIf="!isEditModeFavorites" (click)="addFavoritePlace()"></app-add-favorite-place-card>
+  <div class="default-places-title">
+    <p class="place-subtitle-caption">Ciudades favoritas</p>
+    @if (favoritePlaces.length > 0) {
+      <button pw-text-button color="primary" size="small" (click)="toggleEditModeFavorites()">
+        <i class="fa-solid" [ngClass]="isEditModeFavorites ? 'fa-check' : 'fa-edit'"></i>
+        {{isEditModeFavorites ? 'Listo' : 'Editar'}}
+      </button>
+    }
+  </div>
+  <ul  class="list">
+    @if (isEditModeFavorites) {
+      <app-add-favorite-place-card (click)="addFavoritePlace()"></app-add-favorite-place-card>
+    }
+    @for (favoritePlace of favoritePlaces; track favoritePlace) {
+      <app-favorite-place-card (deletePlace)="deleteFavoritePlace(favoritePlace.placeId)" [isEditMode]="isEditModeFavorites" [isDefaultPlace]="false"
+      [placeId]="favoritePlace.placeId" [name]="favoritePlace.name"></app-favorite-place-card>
+    }
+    @if (!isEditModeFavorites) {
+      <app-add-favorite-place-card (click)="addFavoritePlace()"></app-add-favorite-place-card>
+    }
 
-    </ul>
+  </ul>
 </div>

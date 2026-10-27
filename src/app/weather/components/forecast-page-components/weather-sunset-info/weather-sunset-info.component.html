@@ -1,7 +1,9 @@
 <app-wrapper-header text="Salida y puesta de sol"></app-wrapper-header>
 <div class="wrapper">
-    <div class="app-card" *ngFor="let sunsetWeatherCard of sunsetWeatherCards">
-        <app-card-info [icon]="sunsetWeatherCard.icon" [title]="sunsetWeatherCard.title" [text]="sunsetWeatherCard.text"></app-card-info>
-        <!--<p class="side-text">{{sunsetWeatherCard.sideText}}</p>-->
+  @for (sunsetWeatherCard of sunsetWeatherCards; track sunsetWeatherCard) {
+    <div class="app-card">
+      <app-card-info [icon]="sunsetWeatherCard.icon" [title]="sunsetWeatherCard.title" [text]="sunsetWeatherCard.text"></app-card-info>
+      <!--<p class="side-text">{{sunsetWeatherCard.sideText}}</p>-->
     </div>
+  }
 </div>

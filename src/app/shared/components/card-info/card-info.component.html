@@ -1,7 +1,9 @@
 <div class="wrapper">
-    <i *ngIf="showIcon" class="icon" [ngClass]="'fa-solid fa-'+icon"></i>
-    <div class="card-info-text">
-        <p class="title">{{title}}</p>
-        <p class="text">{{text}}</p>
-    </div>   
+  @if (showIcon) {
+    <i class="icon" [ngClass]="'fa-solid fa-'+icon"></i>
+  }
+  <div class="card-info-text">
+    <p class="title">{{title}}</p>
+    <p class="text">{{text}}</p>
+  </div>
 </div>

@@ -1,10 +1,11 @@
 <div class="wrapper">
-  <app-weather-nav-button
-    class="nav-button"
-    *ngFor="let navbarItem of navbarItems"
-    [text]=navbarItem.text
-    [icon]=navbarItem.icon
-    [url]=navbarItem.url
-    [ngClass]="navbarItem.text === 'Buscar' ? 'hidden-in-desktop' : null">
-  </app-weather-nav-button>
+  @for (navbarItem of navbarItems; track navbarItem) {
+    <app-weather-nav-button
+      class="nav-button"
+      [text]=navbarItem.text
+      [icon]=navbarItem.icon
+      [url]=navbarItem.url
+      [ngClass]="navbarItem.text === 'Buscar' ? 'hidden-in-desktop' : null">
+    </app-weather-nav-button>
+  }
 </div>

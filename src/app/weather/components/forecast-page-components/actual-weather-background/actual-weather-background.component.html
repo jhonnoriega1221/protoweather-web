@@ -1,7 +1,15 @@
 <div class="wrapper">
-	<pw-sky-gradient [isCloudy]="weatherCodeData.isCloudy" [actualHour]="setHour()"></pw-sky-gradient>
-	<pw-clouds *ngIf="weatherCodeData.cloudLevel > 0" [isCloudy]="weatherCodeData.isCloudy" [cloudsLevel]="weatherCodeData.cloudLevel" [actualHour]="setHour()"></pw-clouds>
-	<pw-stars *ngIf="(setHour() > 17 || setHour() < 7) && !weatherCodeData.isCloudy" [actualHour]="setHour()"></pw-stars>
-	<pw-sun *ngIf="(setHour() > 7 && setHour() < 17) && weatherCodeData.isShowingSun"></pw-sun>
-	<pw-rain *ngIf="weatherCodeData.isRain"></pw-rain>
+  <pw-sky-gradient [isCloudy]="weatherCodeData.isCloudy" [actualHour]="setHour()"></pw-sky-gradient>
+  @if (weatherCodeData.cloudLevel > 0) {
+    <pw-clouds [isCloudy]="weatherCodeData.isCloudy" [cloudsLevel]="weatherCodeData.cloudLevel" [actualHour]="setHour()"></pw-clouds>
+  }
+  @if ((setHour() > 17 || setHour() < 7) && !weatherCodeData.isCloudy) {
+    <pw-stars [actualHour]="setHour()"></pw-stars>
+  }
+  @if ((setHour() > 7 && setHour() < 17) && weatherCodeData.isShowingSun) {
+    <pw-sun></pw-sun>
+  }
+  @if (weatherCodeData.isRain) {
+    <pw-rain></pw-rain>
+  }
 </div>
